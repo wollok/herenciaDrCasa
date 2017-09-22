@@ -1,0 +1,42 @@
+import persona.*
+import enfermedad.*
+
+describe "tests dr casa" {
+var logan = new Persona(100000)
+var lupus = new EnfermedadAutoinmune(10000)
+var malaria = new EnfermedadInfecciosa(5000)
+var house = new Jefe(2000,37,40)
+var cameron = new Medico(700000,36,50000)
+
+fixture{
+	logan.contraer(malaria)
+	logan.contraer(lupus)
+}
+method houseContrataEmpleados(){
+	house.contratar(cameron)
+}
+test "Logan, al pasar un dia, celulas 90000" {
+	logan.pasarUnDia()
+	assert.equals(90000,logan.celulas())
+}
+test "Logan, al pasar un dia, 42 grados" {
+	logan.pasarUnDia()
+	assert.equals(42,logan.temperatura())
+
+}
+
+test "House con Cameron como empleada, cura a logan" {
+	self.houseContrataEmpleados()
+	house.atenderA(logan)
+	assert.that(logan.estaCurada())
+}
+
+test "House sin empleados, al atender, da un error" {
+	
+	assert.throwsExceptionWithMessage("Un jefe sin empleados no puede atender pacientes",{house.atenderA(logan)})
+}
+test "House sin empleados, al atender, da este error" {
+	assert.throwsExceptionWithType(new SinEmpleadosException(),{house.atenderA(logan)})
+}
+
+}
