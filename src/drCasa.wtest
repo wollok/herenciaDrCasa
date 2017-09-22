@@ -1,4 +1,4 @@
-import persona.*
+import personas.*
 import enfermedad.*
 
 describe "tests dr casa" {
