@@ -1,16 +1,16 @@
+import enfermedad.*
+
 class SinEmpleadosException inherits Exception {}
 
 class Persona {
 	var celulas
 	var temperatura
 	var enfermedades = []
-	
 	constructor(c,t) {
 		celulas = c
 		temperatura = t
 	}
-	constructor(c) = self(c,37) 
-	
+		
 	method contraer(enfermedad){
 		enfermedades.add(enfermedad)
 	}
@@ -44,7 +44,7 @@ class Medico inherits Persona{
 		paciente.recibirMedicamento(dosis)	
 	}
 	override method contraer(enfermedad){
-		super(enfermedad) 
+		super(enfermedad)
 		self.atenderA(self)	
 	}
 }
@@ -60,5 +60,6 @@ class Jefe inherits Medico{
 	}
 	method contratar(empleado){
 		empleados.add(empleado)
-	}	
+	}
+	
 }

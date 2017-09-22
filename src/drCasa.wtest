@@ -2,7 +2,7 @@ import persona.*
 import enfermedad.*
 
 describe "tests dr casa" {
-var logan = new Persona(100000)
+var logan = new Persona(100000,37)
 var lupus = new EnfermedadAutoinmune(10000)
 var malaria = new EnfermedadInfecciosa(5000)
 var house = new Jefe(2000,37,40)
@@ -33,7 +33,7 @@ test "House con Cameron como empleada, cura a logan" {
 
 test "House sin empleados, al atender, da un error" {
 	
-	assert.throwsExceptionWithMessage("Un jefe sin empleados no puede atender pacientes",{house.atenderA(logan)})
+	assert.throwsException({house.atenderA(logan)})
 }
 test "House sin empleados, al atender, da este error" {
 	assert.throwsExceptionWithType(new SinEmpleadosException(),{house.atenderA(logan)})

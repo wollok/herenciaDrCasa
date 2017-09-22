@@ -1,3 +1,12 @@
+object muerte {
+	method atenuar() {}
+	
+	method afectarA(paciente) {
+		paciente.congelar()
+	}
+	method estaViva() = true
+	
+}
 
 class Enfermedad {
 	var celulasAmenazadas
@@ -9,21 +18,17 @@ class Enfermedad {
 	method atenuar(cantidad) {
 		celulasAmenazadas -=cantidad
 	}
+	
 	method estaViva() = celulasAmenazadas > 0
 	
-	method domingo(paciente){
-		self.afectarA(paciente)
-		self.afectarA(paciente)
-		self.atenuar(10)
-	}
 	
-	method afectarA(paciente)
+
 	
 }
 
 class EnfermedadInfecciosa inherits Enfermedad {
 	
-	override method afectarA(paciente){
+	method afectarA(paciente){
 		paciente.aumentarTemperatura(celulasAmenazadas/1000)
 	}
 	method reproducir(){
@@ -34,7 +39,7 @@ class EnfermedadInfecciosa inherits Enfermedad {
 
 class EnfermedadAutoinmune inherits Enfermedad {
 	
-	override method afectarA(paciente){
+	method afectarA(paciente){
 		paciente.destruirCelulas(celulasAmenazadas)
 	}
 	
