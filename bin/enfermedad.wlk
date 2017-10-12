@@ -4,8 +4,9 @@ object muerte {
 	method afectarA(paciente) {
 		paciente.congelar()
 	}
-	method estaViva() = true
+	method estaCurada() = false
 	
+	method esAgresiva(paciente) = true
 }
 
 class Enfermedad {
@@ -19,10 +20,7 @@ class Enfermedad {
 		celulasAmenazadas -=cantidad
 	}
 	
-	method estaViva() = celulasAmenazadas > 0
-	
-	
-
+	method estaCurada() = celulasAmenazadas <= 0
 	
 }
 
@@ -34,13 +32,22 @@ class EnfermedadInfecciosa inherits Enfermedad {
 	method reproducir(){
 		celulasAmenazadas = celulasAmenazadas * 2 
 	}
-	
+	method esAgresiva(paciente) 
+	   = celulasAmenazadas > paciente.celulas()
 }
 
 class EnfermedadAutoinmune inherits Enfermedad {
+	var dias = 0 
 	
 	method afectarA(paciente){
 		paciente.destruirCelulas(celulasAmenazadas)
+		dias++
 	}
-	
+	method esAgresiva(paciente) = dias > 30 
+}
+
+object varicela inherits EnfermedadAutoinmune(2000) {
+
+	override method esAgresiva(paciente) 
+		= super(paciente) && celulasAmenazadas > 100
 }
