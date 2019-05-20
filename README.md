@@ -1,4 +1,7 @@
 # Dr. Casa 
+ 
+[![Build Status](https://travis-ci.org/wollok/herenciaDrCasa.svg?branch=master)](https://travis-ci.org/wollok/herenciaDrCasa)
+
 
 ## Temporada 1
 ### *[Clases, Colecciones]*
