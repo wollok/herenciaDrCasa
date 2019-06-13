@@ -12,10 +12,6 @@ object muerte {
 class Enfermedad {
 	var celulasAmenazadas
 	
-	constructor(c) {
-		celulasAmenazadas= c
-	}
-	
 	method atenuar(cantidad) {
 		celulasAmenazadas -=cantidad
 	}
@@ -46,7 +42,7 @@ class EnfermedadAutoinmune inherits Enfermedad {
 	method esAgresiva(paciente) = dias > 30 
 }
 
-object varicela inherits EnfermedadAutoinmune(2000) {
+object varicela inherits EnfermedadAutoinmune(celulasAmenazadas = 2000) {
 
 	override method esAgresiva(paciente) 
 		= super(paciente) && celulasAmenazadas > 100

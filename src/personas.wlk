@@ -3,14 +3,10 @@ import enfermedad.*
 class SinEmpleadosException inherits Exception {}
 
 class Persona {
-	var celulas
-	var temperatura 
+	var property celulas
+	var property temperatura 
 	const enfermedades = []
-	constructor(c,t) {
-		celulas = c
-		temperatura = t
-	}
-		
+
 	method contraer(enfermedad){
 		if(enfermedades.size() <5)
 		   enfermedades.add(enfermedad)
@@ -28,18 +24,12 @@ class Persona {
 		enfermedades.forEach({enf => enf.atenuar(dosis*15)})
 		enfermedades.removeAllSuchThat{enf=>enf.estaCurada()}
 	}
-	method celulas() = celulas
-	method temperatura() = temperatura
 	
 	method estaCurada() = enfermedades.isEmpty()
 }
 
 class Medico inherits Persona{
-	var dosis
-	
-	constructor(cel,temp,unaDosis) = super(cel,temp) {
-		dosis = unaDosis
-	}
+	var dosis = 0
 	
 	method atenderA(paciente) {
 		paciente.recibirMedicamento(dosis)	

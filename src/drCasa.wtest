@@ -2,12 +2,12 @@ import personas.*
 import enfermedad.*
 
 describe "tests dr casa" {
-var logan = new Persona(100000,37)
-var lupus = new EnfermedadAutoinmune(10000)
-var malaria = new EnfermedadInfecciosa(5000)
-var house = new Jefe(2000,37,40)
-var cameron = new Medico(700000,36,6000)
-var foreman = new Medico(700000,36,100)
+var logan = new Persona(celulas = 100000,temperatura = 37)
+var lupus = new EnfermedadAutoinmune(celulasAmenazadas = 10000)
+var malaria = new EnfermedadInfecciosa(celulasAmenazadas = 5000)
+var house = new Jefe(celulas = 2000,temperatura = 37)
+var cameron = new Medico(celulas = 700000,temperatura = 36, dosis = 6000)
+var foreman = new Medico(celulas = 700000,temperatura = 36,dosis = 100)
 
 
 fixture{
