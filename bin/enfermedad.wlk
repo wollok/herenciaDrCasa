@@ -26,7 +26,7 @@ class EnfermedadInfecciosa inherits Enfermedad {
 		paciente.aumentarTemperatura(celulasAmenazadas/1000)
 	}
 	method reproducir(){
-		celulasAmenazadas = celulasAmenazadas * 2 
+		celulasAmenazadas *= 2 
 	}
 	method esAgresiva(paciente) 
 	   = celulasAmenazadas > paciente.celulas()
@@ -37,7 +37,7 @@ class EnfermedadAutoinmune inherits Enfermedad {
 	
 	method afectarA(paciente){
 		paciente.destruirCelulas(celulasAmenazadas)
-		dias++
+		dias += 1
 	}
 	method esAgresiva(paciente) = dias > 30 
 }
