@@ -1,12 +1,13 @@
 # Dr. Casa 
  
 [![Build Status](https://travis-ci.org/wollok/herenciaDrCasa.svg?branch=master)](https://travis-ci.org/wollok/herenciaDrCasa)
-
+ 
+![](drhouse.jpg)
 
 ## Temporada 1
 ### *[Clases, Colecciones]*
 
-Everybody dies! El Departamento de Diagnóstico del Hospital Universitario Tecnológico nos pidió que les diéramos una mano con un sistema que les ayude a hacer su trabajo. Después de una interconsulta con distintos docentes de la materia optamos por modelarlo en objetos.
+_Everybody dies! El Departamento de Diagnóstico del Hospital Universitario Tecnológico nos pidió que les diéramos una mano con un sistema que les ayude a hacer su trabajo. Después de una interconsulta con distintos docentes de la materia optamos por modelarlo en objetos._
 
 Cualquier persona puede contraer enfermedades (no puede contraer más de 5). En el momento que contrae una enfermedad no le causa ningún efecto, pero cada día que vive una persona con su enfermedad se producen sus efectos.
 
@@ -22,23 +23,25 @@ Una enfermedad infecciosa es agresiva cuando la cantidad de células afectadas s
 Se pide la codificación necesaria y sus casos de prueba (al menos lo que se pide en el enunciado, pueden organizarlos como quieran y agregar más!) considerando el siguiente escenario inicial con personas y enfermedades:
 
 ### Enfermedades: 
-Una malaria de 500 células amenazadas, una otitis de 100 células amenazadas y un lupus de 10000. 
-Otra malaria más pulenta de 800 células amenazadas.
+1. Una malaria de 500 células amenazadas, una otitis de 100 células amenazadas y un lupus de 10000. 
+2. Otra malaria más pulenta de 800 células amenazadas.
 
 ### Personas:
-* Logan, con temperatura normal (36 grados) y con 3.000.000 de células, habiendo contraído las tres enfermedades del item a).
+* Logan, con temperatura normal (36 grados) y con 3.000.000 de células, habiendo contraído las tres enfermedades del item 1.
 * Frank, con temperatura normal y 3.500.000 células.
 
-* Hacer que Frank contraiga la enfermedad del item b).
+* Hacer que Frank contraiga la enfermedad del item 2.
 * Hacer que una malaria (la que contrajo Logan) se reproduzca.
 * Hacer que Logan viva un día de su vida. 
 * Que el sistema permita verificar además:
-la cantidad de células de Logan que estén amenazadas por enfermedades agresivas.
-la enfermedad de Logan que más células afecte.
-si Logan está en coma, lo que sucede si su temperatura es 45° o si tiene menos de 1.000.000 de células.
+  - la cantidad de células de Logan que estén amenazadas por enfermedades agresivas.
+  - la enfermedad de Logan que más células afecte.
+  - si Logan está en coma, lo que sucede si su temperatura es 45° o si tiene menos de 1.000.000 de células.
 
 ## Temporada 2
 ### *[Herencia, redefinición, super]*
+
+![](enfermedades.jpg)
 
 Good news, new symptoms! La directora del hospital,  Lisa Cuddy no puede convencer a Dr. House de usar el sistema y nos llamó para actualizarnos sobre los requerimientos.
 
@@ -54,5 +57,5 @@ Los médicos saben atender a cualquier persona enferma dándoles una dosis de me
 
 ### Para pensar: 
 * Aparece una nueva enfermedad que cualquier persona puede contraer. ¿qué deberíamos saber de ella para poder representarla? ¿cuáles serían las alternativas de solución?
-* ¿Qué pasaría si todas las enfermedades matan las células que afectan? ¿Y si las autoinmunes tuvieran otro efecto adicional?
+* ¿Qué pasaría si todas las enfermedades destruyen las células que amenazan? ¿Y si las autoinmunes tuvieran otro efecto adicional?
 * Ahora queremos modelar una enfermedad como el sida, que es tanto infecciosa como autoinmune. ¿Cómo lo solucionamos?

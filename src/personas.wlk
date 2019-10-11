@@ -4,7 +4,7 @@ class SinEmpleadosException inherits Exception {}
 
 class Persona {
 	var property celulas
-	var property temperatura 
+	var property temperatura = 36
 	const enfermedades = []
 
 	method contraer(enfermedad){

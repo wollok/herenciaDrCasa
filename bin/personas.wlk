@@ -4,7 +4,7 @@ class SinEmpleadosException inherits Exception {}
 
 class Persona {
 	var property celulas
-	var property temperatura 
+	var property temperatura = 36
 	const enfermedades = []
 
 	method contraer(enfermedad){
@@ -45,7 +45,7 @@ class Jefe inherits Medico{
 
 	override method atenderA(paciente) {
 		if (empleados.isEmpty()) {
-			throw new SinEmpleadosException("Un jefe sin empleados no puede atender pacientes")
+			throw new SinEmpleadosException(message = "Un jefe sin empleados no puede atender pacientes")
 		}
 		empleados.anyOne().atenderA(paciente) 
 	}
