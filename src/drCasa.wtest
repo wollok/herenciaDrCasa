@@ -4,6 +4,7 @@ import enfermedad.*
 describe "tests dr casa" {
 var logan = new Persona(celulas = 3000000)
 var frank= new Persona(celulas = 3500000)
+var lucy = new Persona(celulas = 1000000)
 var lupus = new EnfermedadAutoinmune(celulasAmenazadas = 10000)
 var otitis = new EnfermedadInfecciosa(celulasAmenazadas = 100)
 var malaria = new EnfermedadInfecciosa(celulasAmenazadas = 500)
@@ -45,4 +46,21 @@ test "House sin empleados, al atender, da este error" {
 	assert.throwsExceptionWithType(new SinEmpleadosException(),{house.atenderA(logan)})
 }
 
+test "La muerte le disminuye mortalmente la temperatura al paciente" {
+	logan.contraer(muerte)
+	logan.pasarUnDia()
+	assert.equals(0,logan.temperatura())
+}
+
+test "Una varicela de muchas celulas es agresiva" {
+	const varicela = new Varicela(celulasAmenazadas = 2000)
+	lucy.contraer(varicela)
+	assert.that(varicela.esAgresiva(lucy))
+}
+test "Una varicela de pocas celulas, pasando mas de un mes es agresiva" {
+	const varicela = new Varicela(celulasAmenazadas = 1)
+	lucy.contraer(varicela)
+	31.times{x=>lucy.pasarUnDia()}
+	assert.that(varicela.esAgresiva(lucy))
+}
 }

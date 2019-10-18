@@ -20,8 +20,7 @@ class Enfermedad {
 	
 }
 
-class EnfermedadInfecciosa inherits Enfermedad {
-	
+class EnfermedadInfecciosa inherits Enfermedad{
 	method afectarA(paciente){
 		paciente.aumentarTemperatura(celulasAmenazadas/1000)
 	}
@@ -42,8 +41,8 @@ class EnfermedadAutoinmune inherits Enfermedad {
 	method esAgresiva(paciente) = dias > 30 
 }
 
-object varicela inherits EnfermedadAutoinmune(celulasAmenazadas = 2000) {
+class Varicela inherits EnfermedadAutoinmune {
 
 	override method esAgresiva(paciente) 
-		= super(paciente) && celulasAmenazadas > 100
+		= super(paciente) || celulasAmenazadas > 100
 }

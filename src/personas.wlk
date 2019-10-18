@@ -11,6 +11,7 @@ class Persona {
 		if(enfermedades.size() <5)
 		   enfermedades.add(enfermedad)
 	}
+	
 	method pasarUnDia(){
 		enfermedades.forEach({enf => enf.afectarA(self)})
 	}
@@ -24,6 +25,7 @@ class Persona {
 		enfermedades.forEach({enf => enf.atenuar(dosis*15)})
 		enfermedades.removeAllSuchThat{enf=>enf.estaCurada()}
 	}
+	method congelar() { temperatura = 0}
 	
 	method estaCurada() = enfermedades.isEmpty()
 }
