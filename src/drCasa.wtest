@@ -14,7 +14,7 @@ var cameron = new Medico(celulas = 700000, dosis = 6000)
 var foreman = new Medico(celulas = 700000, dosis = 100)
 
 
-fixture{
+method initialize(){
 	logan.contraer(malaria)
 	logan.contraer(lupus)
 	logan.contraer(otitis)
